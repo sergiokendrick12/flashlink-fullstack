@@ -1,0 +1,136 @@
+/* ===== RESPONSIVE / MOBILE ===== */
+
+/* Tablet & below */
+@media (max-width: 1024px) {
+  .desktop-nav { display: none !important; }
+  .hamburger-btn { display: flex !important; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  /* Dashboard stat cards — 2 columns on mobile */
+  [style*="gridTemplateColumns: 'repeat(4, 1fr)'"],
+  [style*='gridTemplateColumns: "repeat(4, 1fr)"'] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Dashboard two-column panels — stack on mobile */
+  [style*="gridTemplateColumns: '1fr 1fr'"],
+  [style*='gridTemplateColumns: "1fr 1fr"'] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Admin overview cards */
+  [style*="minmax(220px, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Page headers — reduce padding */
+  [style*="padding: '2rem 5%'"],
+  [style*="padding: '2.5rem 5%'"] {
+    padding: 1.25rem 4% !important;
+  }
+
+  /* Page content areas */
+  [style*="padding: '2rem 5%'"] {
+    padding: 1rem 4% !important;
+  }
+
+  /* Tables — allow horizontal scroll */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Shipment/Quote action buttons wrap */
+  td > div[style*="display: 'flex'"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* Notification dropdown width */
+  [style*="width:320"] {
+    width: 290px !important;
+    right: -60px !important;
+  }
+
+  /* Settings sidebar + content — stack */
+  [style*="width: 200"] {
+    width: 100% !important;
+  }
+
+  /* Hero font sizes */
+  h1 { font-size: 1.6rem !important; }
+  h2 { font-size: 1.3rem !important; }
+
+  /* Reduce max-width padding */
+  [style*="maxWidth: 1200"] {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+
+  [style*="maxWidth: 900"] {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+  }
+
+  /* Quick action buttons in dashboard header — wrap */
+  [style*="gap: '0.75rem'"] {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Forms */
+  input, select, textarea {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  /* Stat cards — 1 column on very small screens */
+  [style*="gridTemplateColumns: 'repeat(4, 1fr)'"],
+  [style*='gridTemplateColumns: "repeat(4, 1fr)"'] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Admin tab buttons wrap */
+  [style*="gap: '0.75rem'"][style*="marginBottom: '1.5rem'"] {
+    gap: 0.4rem !important;
+  }
+
+  /* Reduce font in tables */
+  td, th {
+    font-size: 0.78rem !important;
+    padding: 8px 10px !important;
+  }
+
+  /* Contact detail grid — stack */
+  [style*="gridTemplateColumns: '1fr 1fr'"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Dashboard header name */
+  [style*="fontSize: '2rem'"] {
+    font-size: 1.4rem !important;
+  }
+
+  /* Invoice/action buttons in rows */
+  [style*="display: 'flex'"][style*="gap: '0.75rem'"] {
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Fix flex wrap for shipment/quote action rows on mobile */
+@media (max-width: 640px) {
+  .desktop-nav { display: none !important; }
+  .hamburger-btn { display: flex !important; }
+
+  /* Stack settings layout */
+  [style*="display: 'flex'"][style*="gap: '1.5rem'"][style*="flexWrap: 'wrap'"] {
+    flex-direction: column !important;
+  }
+}
