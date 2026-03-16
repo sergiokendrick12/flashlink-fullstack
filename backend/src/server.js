@@ -13,7 +13,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: ['https://flashlink-fullstack.vercel.app', 'https://flashlink-fullstack-mlnsuq6zn-serges-projects-fd201acd.vercel.app', 'http://localhost:3000'] || 'http://localhost:3000',
     credentials: true,
   }
 });
@@ -21,7 +21,7 @@ const io = new Server(server, {
 connectDB();
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  
   credentials: true,
 }));
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: { success: false, message: 'Too many requests, please try again later.' } });
